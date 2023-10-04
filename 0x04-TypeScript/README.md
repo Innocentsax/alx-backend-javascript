@@ -1,12 +1,12 @@
 # ES6 Typescript
 
-![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220614183844/Best-known-ARRAY-methods.png)
+![](https://miro.medium.com/v2/resize:fit:1358/1*moJeTvW97yShLB7URRj5Kg.png)
 
 # Resources
 Read or watch:
 
-[TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-[TypeScript documentation](https://www.typescriptlang.org/docs/handbook/basic-types.html)
++ [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
++ [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 # Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
