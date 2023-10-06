@@ -5,5 +5,5 @@
 ## Projects
 
 - [ES6 Basics](./0x04-TypeScript)
-- <!--
-- [ES6 Promise](./0x01-ES6_promise) -->
+- [ES6 Promise](./0x01-ES6_promise)
+- [ES6 Promise](./0x01-ES6_Classes)
