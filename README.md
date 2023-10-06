@@ -8,5 +8,5 @@
 - [ES6 Promise](./0x01-ES6_promise)
 - [ES6 Classes](./0x01-ES6_classes)
 - [ES6 Data Manipulation](./0x01-ES6_data_manipulation)
-- [ES6 Basics](./0x04-TypeScript)
+- [ES6 TypeScript](./0x04-TypeScript)
 
