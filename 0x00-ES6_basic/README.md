@@ -149,3 +149,6 @@ module.exports = {
 $ npm install
 ```
 __AFTER THIS IS DONE A node_module would be in your current directory containing all packages installed__
+
+## Author
+#### ___[INNOCENT UDO](https://github.com/Innocentsax)___
