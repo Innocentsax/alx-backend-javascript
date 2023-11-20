@@ -1,0 +1,36 @@
+# Directories
+node_modules/
+dist/
+coverage/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Build files
+build/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Testing frameworks
+jest.config.js
+
+# Miscellaneous
+*.swp
+*.swo
+
