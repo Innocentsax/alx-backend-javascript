@@ -198,3 +198,102 @@ Spies are a useful wrapper that will execute the wrapped function, and log usefu
 -   Remember to always restore a spy after using it in a test, it will prevent you from having weird behaviors
 -   Spies are really useful and allow you to focus only on what your code is doing and not the downstream APIs or functions
 -   Remember that integration test is different from unit test. Your unit test should test your code, not the code of a different function
+
+
+### 4. Stubs
+
+
+Stubs are similar to spies. Except that you can provide a different implementation of the function you are wrapping. Sinon can be used as well for stubs.
+
+**Create a new file  `4-payment.js`, and copy the code from  `3-payment.js`**  (same content, same behavior)
+
+**Create a new file  `4-payment.test.js`, and copy the code from  `3-payment.test.js`**
+
+-   Imagine that calling the function  `Utils.calculateNumber`  is actually calling an API or a very expensive method. You don’t necessarily want to do that on every test run
+-   Stub the function  `Utils.calculateNumber`  to always return the same number  `10`
+-   Verify that the stub is being called with  `type = SUM`,  `a = 100`, and  `b = 20`
+-   Add a spy to verify that  `console.log`  is logging the correct message  `The total is: 10`
+
+**Requirements:**
+
+-   You should be able to run the test suite using  `npm test 4-payment.test.js`
+-   Every test should pass without any warning
+-   You should use a  `stub`  to complete this exercise
+-   Do not forget to restore the spy and the stub
+
+**Tips:**
+
+-   Using stubs allows you to greatly speed up your test. When executing thousands of tests, saving a few seconds is important
+-   Using stubs allows you to control specific edge case (e.g a function throwing an error or returning a specific result like a number or a timestamp)
+
+
+### 5. Hooks
+
+
+Hooks are useful functions that can be called before execute one or all tests in a suite
+
+**Copy the code from  `4-payment.js`  into a new file  `5-payment.js`:**  (same content/same behavior)
+
+**Create a new file  `5-payment.test.js`:**
+
+-   Inside the same  `describe`, create 2 tests:
+    -   The first test will call  `sendPaymentRequestToAPI`  with 100, and 20:
+        -   Verify that the console is logging the string  `The total is: 120`
+        -   Verify that the console is only called once
+    -   The second test will call  `sendPaymentRequestToAPI`  with 10, and 10:
+        -   Verify that the console is logging the string  `The total is: 20`
+        -   Verify that the console is only called once
+
+**Requirements:**
+
+-   You should be able to run the test suite using  `npm test 5-payment.test.js`
+-   Every test should pass without any warning
+-   You should use only one  `spy`  to complete this exercise
+-   You should use a  `beforeEach`  and a  `afterEach`  hooks to complete this exercise
+
+
+### 6. Async tests with done
+
+
+Look into how to support async testing, for example when waiting for the answer of an API or from a Promise
+
+**Create a new file  `6-payment_token.js`:**
+
+-   Create a new function named  `getPaymentTokenFromAPI`
+-   The function will take an argument called  `success`  (boolean)
+-   When  `success`  is true, it should return a resolved promise with the object  `{data: 'Successful response from the API' }`
+-   Otherwise, the function is doing nothing.
+
+**Create a new file  `6-payment_token.test.js`  and write a test suite named  `getPaymentTokenFromAPI`**
+
+-   How to test the result of  `getPaymentTokenFromAPI(true)`?
+
+**Tips:**
+
+-   You should be extremely careful when working with async testing. Without calling  `done`  properly, your test could be always passing even if what you are actually testing is never executed
+
+**Requirements:**
+
+-   You should be able to run the test suite using  `npm test 6-payment_token.test.js`
+-   Every test should pass without any warning
+-   You should use the  `done`  callback to execute this test
+
+
+### 7. Skip
+
+
+When you have a long list of tests, and you can’t figure out why a test is breaking, avoid commenting out a test, or removing it.  **Skip**  it instead, and file a ticket to come back to it as soon as possible
+
+You will be using this file, conveniently named  `7-skip.test.js`
+
+```
+const { expect } = require('chai');
+
+describe('Testing numbers', () => {
+  it('1 is equal to 1', () => {
+    expect(1 === 1).to.be.true;
+  });
+
+  it('2 is equal to 2', () => {
+    expect(2 === 2).to.be.true;
+  });
