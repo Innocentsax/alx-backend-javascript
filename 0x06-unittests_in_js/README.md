@@ -297,3 +297,103 @@ describe('Testing numbers', () => {
   it('2 is equal to 2', () => {
     expect(2 === 2).to.be.true;
   });
+  it('1 is equal to 3', () => {
+    expect(1 === 3).to.be.true;
+  });
+
+  it('3 is equal to 3', () => {
+    expect(3 === 3).to.be.true;
+  });
+
+  it('4 is equal to 4', () => {
+    expect(4 === 4).to.be.true;
+  });
+
+  it('5 is equal to 5', () => {
+    expect(5 === 5).to.be.true;
+  });
+
+  it('6 is equal to 6', () => {
+    expect(6 === 6).to.be.true;
+  });
+
+  it('7 is equal to 7', () => {
+    expect(7 === 7).to.be.true;
+  });
+});
+
+```
+
+**Using the file  `7-skip.test.js`:**
+
+-   Make the test suite pass  **without**  fixing or removing the failing test
+-   `it`  description  **must stay**  the same
+
+**Tips:**
+
+-   Skipping is also very helpful when you only want to execute the test in a particular case (specific environment, or when an API is not behaving correctly)
+
+**Requirements:**
+
+-   You should be able to run the test suite using  `npm test 7-skip.test.js`
+-   Every test should pass without any warning
+
+
+### 8. Basic Integration testing
+
+
+In a folder  `8-api`  located at the root of the project directory, copy this  `package.json`  over.
+
+```
+{
+  "name": "8-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "request": "^2.88.0",
+    "sinon": "^7.5.0"
+  }
+}
+
+```
+
+**Create a new file  `api.js`:**
+
+-   By using  `express`, create an instance of  `express`  called  `app`
+-   Listen to port 7865 and log  `API available on localhost port 7865`  to the browser console when the  `express`  server is started
+-   For the route  `GET /`, return the message  `Welcome to the payment system`
+
+**Create a new file  `api.test.js`:**
+
+-   Create one suite for the index page:
+    -   Correct status code?
+    -   Correct result?
+    -   Other?
+
+**Server**
+
+Terminal 1
+
+```
+bob@dylan:~/8-api$  node api.js
+API available on localhost port 7865
+
+```
+
+Terminal 2
+
+```
+bob@dylan:~/8-api$  curl http://localhost:7865 ; echo ""
+Welcome to the payment system
+bob@dylan:~/8-api$  
